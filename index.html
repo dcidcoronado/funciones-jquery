@@ -39,7 +39,6 @@
       $('#addclass').on("click", function(){
         $('#fourth-p').addClass("bg-secondary text-white p-2 rounded");
       });  
-
       $('#before').on("click", function(){
         $('#fifth-p').before("<p>Inicio</p>");
       });  
@@ -49,20 +48,21 @@
       $('#append').on("click", function(){
         $('#fifth-p').append("<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus ratione, tempora tempore a maxime voluptatem ipsa id quae voluptatibus quia voluptatum corrupti sapiente maiores. Nisi aliquid maxime quam quisquam rem?</p>");
       });  
-
-      // $('#html').on("click", function(){
-      //   $("#sixth-p").html("<h4>Hola Mundo</h4>");
-      // }); 
-      $('#text').on("click", function(){
-        let txt = $("#sixth-p").text();
-        $("#sixth-p").html(txt);
+      $('#html').on("click", function(){
+        $("#sixth-p").html("<h4>Hola Mundo</h4>"); 
       }); 
-
-
-
+      $('#text').on("click", function(){
+        $("#sixth-p").text('Daniel Cid estuvo aquí.');
+      }); 
+      $('#attr').on("click", function(){
+        $("#name-form").attr('type', 'password');
+      });  
+      $('#val').on("click", function (){
+        let value = $('#email-form').val();
+        $('#text-form').val(value);
+      })
     });
   </script>
-
 </head>
 <body>
   <div class="container col-12 my-3" style="border: 1px solid black;">
@@ -98,7 +98,6 @@
         <p id="third-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus ratione, tempora tempore a maxime voluptatem ipsa id quae voluptatibus quia voluptatum corrupti sapiente maiores. Nisi aliquid maxime quam quisquam rem?</p>
       </div>
     </div> 
-    
     <div class="row p-3">
       <div class="col-4 py-4">
         <button id="addclass" class="btn btn-dark">AddClass</button>
@@ -108,7 +107,6 @@
         <p id="fourth-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quas repellendus labore, beatae fugit porro perspiciatis optio at tempore modi incidunt quo ab totam quisquam neque illo laboriosam cumque laborum.</p>
       </div>
     </div>
-
     <div class="row p-3">
       <div class="col-4 py-4">
         <button id="before" class="btn btn-dark">Before</button>
@@ -120,7 +118,6 @@
         <p id="fifth-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque illo molestias incidunt explicabo! Necessitatibus quis rem aut vero nisi ipsa doloribus enim. Ipsam officia amet, iste tempore modi unde nesciunt.</p>
       </div>
     </div>
-
     <div class="row p-3">
       <div class="col-4 py-4">
         <button id="html" class="btn btn-dark">HTML</button>
@@ -131,28 +128,33 @@
         <p id="sixth-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </div>
-
     <div class="row p-3">
       <div class="col-4 py-4">
-        <button id="val" class="btn btn-dark">Val</button>
-        <button id="attr" class="btn btn-dark">Attr</button>
+        <button id="val" class="btn btn-dark">Val-capturaemailtotext</button>
+        <button id="attr" class="btn btn-dark">Attr-nametopass</button>
       </div>
       <div class="col-8">
         <h3>Attr/Val</h3>
-        <form action="GET">
-          <input type="name">
+        <form>
+          <div class="mb-3">
+            <label for="email-form" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email-form" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="name-form" class="form-label">Name</label>
+            <input type="name" class="form-control" id="name-form">
+          </div>
+          <div class="form-floating mb-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="text-form"></textarea>
+            <label for="text-form">Value</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <!-- <p id="sixth-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> -->
       </div>
     </div>
-
-
-
   </div>
-
-  
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
   integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" 
   crossorigin="anonymous"></script>
